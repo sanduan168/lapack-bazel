@@ -19,10 +19,10 @@ cc_library(
     name = "lapack",
     srcs = select({
         ":k8": glob([
-             "k8-lib/1.60.0/*.a",
-             "k8-lib/1.60.0/*.so*",
+             "k8-lib/*.a",
+             "k8-lib/*.so*",
          ]),
-        ":aarch64": glob(["aarch64-lib/lib/*.so*"]),
+        ":aarch64": glob(["aarch64-lib/*.so*"]),
         "//conditions:default": [":empty"]
     }),
     linkstatic = True,
